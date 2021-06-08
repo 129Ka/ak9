@@ -23,6 +23,7 @@ let lat = '30.' + Math.round(Math.random() * (99999 - 10000) + 10000);
 let lng = '114.' + Math.round(Math.random() * (99999 - 10000) + 10000);
 let cityid = Math.round(Math.random() * (1500 - 1000) + 1000);
 !(async () => {
+/*
     if (cookies.length == 0) {
         if ($.env.isNode) {
             if (process.env.JDDJ_CKPATH) ckPath = process.env.JDDJ_CKPATH;
@@ -43,6 +44,17 @@ let cityid = Math.round(Math.random() * (1500 - 1000) + 1000);
         console.log(`\r\n请先填写cookie`);
         return;
     }
+*/
+  if (process.env.JDDJ_CKPATH && process.env.JDDJ_CKPATH.indexOf(',') > -1) {
+   cookies = process.env.JDDJ_CKPATH.split(',');
+   console.log(`您选择的是用,隔开\n`)
+  } else {
+   cookies = process.env.JDDJ_CKPATH.split()
+  };
+  
+    console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============\n`)
+    console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============\n`)
+    
     for (let i = 0; i < cookies.length; i++) {
         console.log(`\r\n★★★★★开始执行第${i + 1}个账号,共${cookies.length}个账号★★★★★`);
         thiscookie = cookies[i];

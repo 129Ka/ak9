@@ -43,4 +43,4 @@ if (JSON.stringify(process.env).indexOf('GITHUB')>-1) {
 cookies = [...new Set(cookies.filter(item => !!item))]
 console.log(`\n====================共${cookies.length}个京东账号Cookie=========\n`)
 
-module.exports = cookies
+//module.exports = cookies

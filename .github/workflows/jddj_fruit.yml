@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
     env:
-        JDDJ_CKPATH: ${{ secrets.JDDJ_CKPATH }}
+        JDDJ_COOKIE: ${{ secrets.JDDJ_COOKIE }}
         TZ: Asia/shanghai
     steps:
       - name: Checkout
@@ -26,7 +26,7 @@ jobs:
         run: |
           npm install
       - name: '运行 【jddj_fruit】'
-        if: env.JDDJ_CKPATH
+        if: env.JDDJ_COOKIE
         run: |
           node jddj/jddj_fruit.js
         env:

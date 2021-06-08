@@ -17,6 +17,7 @@ cron "10 0,3,8,11,17 * * *" script-path=https://raw.githubusercontent.com/passer
 
 let isNotify = true;//是否通知,仅限nodejs
 let ckPath = './jddj_cookie.js';//ck路径,环境变量:JDDJ_CKPATH
+let cookies = []
 
   if (process.env.JDDJ_CKPATH && process.env.JDDJ_CKPATH.indexOf(',') > -1) {
    cookies = process.env.JDDJ_CKPATH.split(',');

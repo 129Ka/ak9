@@ -7,6 +7,19 @@ let cookies = [
   '',//账号二ck,例:deviceid_pdj_jd=xxx-xxx-xxx2;o2o_m_h5_sid=xxx-xxx-xxx2;如有更多,依次类推
 ]
 // 判断环境变量里面是否有京东ck
+if (process.env.JDDJ_CKPATH) {
+  if (process.env.JDDJ_CKPATH.indexOf(',') > -1) {
+    cookies = process.env.JDDJ_CKPATH.split(',')
+  } else if (process.env.JDDJ_CKPATH.indexOf('&') > -1) {
+    cookies = process.env.JDDJ_CKPATH.split('&')
+  } else if (process.env.JDDJ_CKPATH.indexOf('\n') > -1) {
+    cookies = process.env.JDDJ_CKPATH.split('\n')
+  } else {
+    cookies = [process.env.JDDJ_CKPATH]
+  }
+}
+
+/*
 if (process.env.JDDJ_COOKIE) {
   if (process.env.JDDJ_COOKIE.indexOf(',') > -1) {
     cookies = process.env.JDDJ_COOKIE.split(',')
@@ -18,7 +31,7 @@ if (process.env.JDDJ_COOKIE) {
     cookies = [process.env.JDDJ_COOKIE]
   }
 }
-/*
+
 if (JSON.stringify(process.env).indexOf('GITHUB')>-1) {
   console.log(`请勿使用github action运行此脚本,无论你是从你自己的私库还是其他哪里拉取的源代码，都会导致我被封号\n`)
   !(async () => {

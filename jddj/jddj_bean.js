@@ -21,7 +21,7 @@ let cookies = [];
 let thiscookie = '', deviceid = '';
 
 /*
-!(async () => {
+
     if (cookies.length == 0) {
         if ($.env.isNode) {
             if (process.env.JDDJ_CKPATH) ckPath = process.env.JDDJ_CKPATH;
@@ -43,6 +43,8 @@ let thiscookie = '', deviceid = '';
         return;
     }
 */    
+
+!(async () => {
       if (process.env.JDDJ_CKPATH && process.env.JDDJ_CKPATH.indexOf(',') > -1) {
    cookies = process.env.JDDJ_CKPATH.split(',');
    console.log(`您选择的是用,隔开\n`)

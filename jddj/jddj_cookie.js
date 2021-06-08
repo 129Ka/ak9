@@ -18,6 +18,7 @@ if (process.env.JDDJ_COOKIE) {
     cookies = [process.env.JDDJ_COOKIE]
   }
 }
+/*
 if (JSON.stringify(process.env).indexOf('GITHUB')>-1) {
   console.log(`请勿使用github action运行此脚本,无论你是从你自己的私库还是其他哪里拉取的源代码，都会导致我被封号\n`)
   !(async () => {
@@ -25,6 +26,7 @@ if (JSON.stringify(process.env).indexOf('GITHUB')>-1) {
     await process.exit(0)
   })()
 }
+*/
 cookies = [...new Set(cookies.filter(item => !!item))]
 console.log(`\n====================共${cookies.length}个京东账号Cookie=========\n`)
 

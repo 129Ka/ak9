@@ -10,7 +10,7 @@ docker环境变量名:DD_TOKEN,多账号换行或英文逗号(,)隔开
 
 */
 
-//let tokens = [];//nodejs填写此处['tk1','tk2'] 
+let tokens = [];//nodejs填写此处['tk1','tk2'] 
 //let tokens = process.env.DIDI_TOKEN
 
 

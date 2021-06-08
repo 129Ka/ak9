@@ -17,6 +17,7 @@ cron "10 0,3,8,11,17 * * *" script-path=https://raw.githubusercontent.com/passer
 
 let isNotify = true;//是否通知,仅限nodejs
 let ckPath = './jddj_cookie.js';//ck路径,环境变量:JDDJ_CKPATH
+/*
 let cookies = [];
 let thiscookie = '', deviceid = '';
 
@@ -29,8 +30,10 @@ let thiscookie = '', deviceid = '';
   
     console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============\n`)
     console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============\n`)
-
+*/
 const $ = new API("jddj_fruit");
+    console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============\n`)
+    console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============\n`)
 try {
     //https://cdn.jsdelivr.net/gh/passerby-b/JDDJ@main/jddj_fruit_code.js
     $.http.get({ url: 'https://raw.githubusercontent.com/129Ka/ak9/main/jddj/jddj_fruit_code.js' }).then(response => {
